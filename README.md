@@ -1,7 +1,7 @@
 # HealthAIUsingGenAI
 Health AI using GenAI with Authentication using Streamlit UI
-```
 # Initial Setup
+```
 mkdir GenAIwithAuth
 cd GenAIwithAuth
 mkdir HealthAI
