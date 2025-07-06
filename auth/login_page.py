@@ -3,13 +3,12 @@ import time
 
 from config.config import  APP_ICON, APP_NAME, APP_TAGLINE, APP_DESCRIPTION
 from utils.validators import validate_signup_fields
+from auth.session_manager import SessionManager
 
 
 def show_login_page():
-    print(st.session_state)
     # IMPORTANT: Initialize form_type immediately, no code before this!
     if 'form_type' not in st.session_state:
-        print(st.session_state)
         st.session_state['form_type'] = 'login'  # Use dict-style access to be safer
     
     # From now on, form_type is guaranteed to exist
@@ -55,11 +54,11 @@ def show_login_form():
     with st.form("login_form"):
         email = st.text_input("Email", key="login_email")
         password = st.text_input("Password", type="password", key="login_password")
-        st.form_submit_button("Login", use_container_width=True, type="primary")
-        '''
+        
         if st.form_submit_button("Login", use_container_width=True, type="primary"):
             if email and password:
                 success, result = SessionManager.login(email, password)
+                print(success, result)
                 if success:
                     # Show success message with spinner
                     with st.spinner("Logging in..."):
@@ -71,7 +70,7 @@ def show_login_form():
                     st.error(f"Login failed: {result}")
             else:
                 st.error("Please enter both email and password")
-        '''
+        
 
 def show_signup_form():
     with st.form("signup_form"):

@@ -1,4 +1,4 @@
-APP_NAME = "HIA"
+APP_NAME = "HelathAI"
 APP_DESCRIPTION = "Your Personal Health AI Agent"
 APP_ICON = "🩺"
 APP_TAGLINE = "Discover a Healthier You with AI"
